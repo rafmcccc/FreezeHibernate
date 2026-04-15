@@ -20,23 +20,23 @@ public final class FreezeHibernate extends JavaPlugin implements Listener {
         Bukkit.getPluginManager().registerEvents(this, this);
     }
 
-   @EventHandler
+    @EventHandler
     private void onQuit(PlayerQuitEvent event) {
         if (server.getOnlinePlayers().size() == 1) {
             serverTickManager.setFrozen(true);
             getLogger().info("Last player disconnected. Server is now frozen.");
         }
-   }
+    }
 
-   @EventHandler
-   private void onJoin(PlayerJoinEvent event){
-         if (serverTickManager.isFrozen()) {
-              serverTickManager.setFrozen(false);
-              getLogger().info("A player joined. Server is now unfrozen.");
-         }
-   }
+    @EventHandler
+    private void onJoin(PlayerJoinEvent event){
+        if (serverTickManager.isFrozen()) {
+            serverTickManager.setFrozen(false);
+            getLogger().info("A player joined. Server is now unfrozen.");
+        }
+    }
 
-   @EventHandler
+    @EventHandler
     private void onStartComplete(ServerLoadEvent event) {
         if (event.getType() == ServerLoadEvent.LoadType.RELOAD) {
             return;
