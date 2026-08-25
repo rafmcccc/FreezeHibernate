@@ -1,0 +1,10 @@
+# Run System.gc() after freezing to reclaim unused memory.
+gc-on-freeze: true
+
+# Seconds between checks that re-freeze the server if it was
+# manually unfrozen (/tick unfreeze) while no players are online.
+# Set to 0 to disable the periodic check.
+check-interval-seconds: 60
+
+messages:
+  frozen-on-empty: "Last player disconnected. Server is now frozen."

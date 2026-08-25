@@ -2,3 +2,15 @@ name: FreezeHibernate
 version: '${version}'
 main: de.malfrador.freezehibernate.FreezeHibernate
 api-version: '1.20'
+author: rafmcccc
+description: Freezes server ticks when no players are online to save CPU and RAM.
+website: https://github.com/rafmcccc/FreezeHibernate
+commands:
+  hibernate:
+    description: Control or check the frozen state of the server.
+    usage: /hibernate <status|freeze|unfreeze>
+    permission: freezehibernate.admin
+permissions:
+  freezehibernate.admin:
+    description: Allows use of the /hibernate command.
+    default: op
